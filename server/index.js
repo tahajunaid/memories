@@ -7,11 +7,11 @@ import postRoutes from './routes/posts.js';
 
 const app=express();
 
-app.use('/posts', postRoutes);
-
 app.use(bodyParser.json({limit:"30mb",extended:true}))
 app.use(bodyParser.urlencoded({limit:"30mb",extended:true}))
 app.use(cors());
+
+app.use('/posts', postRoutes);
 
 //mongodb+srv://<username>:<password>@cluster0.ybetkmz.mongodb.net/?retryWrites=true&w=majority
 const CONNECTION_URL = 'mongodb+srv://taha_memories:H8o6gkFv9mZK1alg@cluster0.ybetkmz.mongodb.net/?retryWrites=true&w=majority';

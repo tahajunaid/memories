@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 
 const Form = (props) => {
     const [postData, setPostData] = useState({ creator: '', title: '', message: '', tags: '', selectedFile: '' });
-    const post = useSelector((state) => (props.currentId ? state.posts.find((message) => message._id == props.currentId) : null));    
+    const post = useSelector((state) => (props.currentId ? state.posts.find((message) => message._id === props.currentId) : null));    
     const classes = useStyles();
     const dispatch = useDispatch();
 
